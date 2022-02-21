@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 import uz.pdp.unversitet.entity.Address;
 @Repository
 public interface AddressRepozitary extends JpaRepository<Address,Integer> {
-
     boolean existsByStreet(String street);
+
+    boolean existsByStreetAndHouseNumberAndDistrict_Id(String street, Integer homeNumber, Integer districtId);
+
 }

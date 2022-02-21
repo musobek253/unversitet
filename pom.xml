@@ -11,8 +11,8 @@
     <groupId>uz.pdp</groupId>
     <artifactId>unversitet</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>unversitet</name>
-    <description>unversitet</description>
+    <name>university</name>
+    <description>university</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -51,7 +51,7 @@
                 <configuration>
                     <excludes>
                         <exclude>
-                            <groupId>org.projectlombok</groupId>
+                            <groupId>org.project-lombok</groupId>
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
