@@ -7,9 +7,8 @@ import uz.pdp.unversitet.dto.UnversitetDTO;
 import uz.pdp.unversitet.entity.University;
 import uz.pdp.unversitet.repozitary.UnversityRepozitary;
 import uz.pdp.unversitet.service.UniversityService;
-
-import javax.persistence.PersistenceUnit;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/university")
@@ -36,6 +35,17 @@ public class UniversityController {
     @GetMapping("/all")
     public List<University> getUNiversity(){
         return unversityRepozitary.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public University getByIdUniversity(@PathVariable Integer id){
+        Optional<University> optionalUniversity = unversityRepozitary.findById(id);
+        return optionalUniversity.orElseGet(University::new);
+    }
+    @DeleteMapping("/{id}")
+    public ApiResponse deletedUniversity(@PathVariable Integer id){
+        unversityRepozitary.deleteById(id);
+        return new ApiResponse("Successfully deleted",true);
     }
 
 }
