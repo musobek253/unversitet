@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import uz.pdp.unversitet.entity.Faculty;
 @Repository
 public interface FacultyRepository extends JpaRepository<Faculty,Integer> {
-    boolean existsByName(String name);
+    boolean existsByNameAndUniversityId(String name, Integer university_id);
 }

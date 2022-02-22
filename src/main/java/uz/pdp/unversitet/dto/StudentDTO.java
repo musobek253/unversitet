@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class StudentDTO {
-    private String FristNmae;
+    private String fristName;
     private String lastName;
-    private String PhoneNumber;
+    private String phoneNumber;
     private Integer groupsId;
 }
