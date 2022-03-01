@@ -16,7 +16,7 @@ public class Student {
     private Integer id;
 
     @Column(nullable = false)
-    private String firstName;
+    private String fristName;
 
     @Column(nullable = false)
     private String lastName;

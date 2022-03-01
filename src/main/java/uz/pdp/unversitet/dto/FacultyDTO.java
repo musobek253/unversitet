@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class FacultyDTO {
     private String name;
-    private Integer c;
+    private Integer universityId;
 }

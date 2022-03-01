@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import uz.pdp.unversitet.dto.ApiResponse;
 import uz.pdp.unversitet.dto.FacultyDTO;
 import uz.pdp.unversitet.entity.Faculty;
-import uz.pdp.unversitet.entity.Groups;
 import uz.pdp.unversitet.repozitary.FacultyRepository;
 import uz.pdp.unversitet.repozitary.UnversityRepozitary;
 

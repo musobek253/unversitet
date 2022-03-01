@@ -26,8 +26,13 @@ public class StudentService {
         if (!groupsRepository.findById(studentDTO.getGroupsId()).isPresent())
             return new ApiResponse("Groups not found" ,false);
         Student student = new Student();
+
         student.setFristName(studentDTO.getFristName());
         student.setLastName(studentDTO.getLastName());
+
+        student.setLastName(studentDTO.getLastName());
+        student.setFristName(studentDTO.getFristName());
+
         student.setPhoneNumber(studentDTO.getPhoneNumber());
         student.setGroups(groupsRepository.findById(studentDTO.getGroupsId()).get());
         studentRepository.save(student);
@@ -39,14 +44,15 @@ public class StudentService {
         if (!optionalStudent.isPresent())
             return new ApiResponse("Student not found",false);
         Student student = optionalStudent.get();
-        if (studentRepository.existsByPhoneNumberAndIdNot(studentDTO.getPhoneNumber(),student.getId()))
+        if (studentRepository.existsByPhoneNumber(studentDTO.getPhoneNumber()))
             return new ApiResponse("Already exist Faculty",false);
         if (!groupsRepository.findById(studentDTO.getGroupsId()).isPresent())
             return new ApiResponse("Groups not found", false);
-       student.setFristName(studentDTO.getFristName());
-       student.setLastName(studentDTO.getLastName());
-       student.setPhoneNumber(studentDTO.getPhoneNumber());
-       student.setGroups(groupsRepository.findById(studentDTO.getGroupsId()).get());
+        student.setFristName(studentDTO.getFristName());
+        student.setLastName(studentDTO.getLastName());
+        student.setPhoneNumber(studentDTO.getPhoneNumber());
+        student.setGroups(groupsRepository.findById(studentDTO.getGroupsId()).get());
+        studentRepository.save(student);
         return new ApiResponse("Successfully edited", true);
     }
 
